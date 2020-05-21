@@ -1,0 +1,21 @@
+html
+    head
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+    body
+        nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+            a.navbar-brand(href='#') The Hanoi Times
+            ul.navbar-nav.mr-auto
+                li.nav-item.active
+                    a.nav-link(href='/') Home
+                li.nav-item.active
+                    a.nav-link(href='/news') News
+                li.nav-item.active
+                    a.nav-link(href='#') Others
+            form.form-inline.my-auto(action='#')
+                input.form-control.mr-sm-2(type='text', placeholder='Search')
+                button.btn.btn-primary(type='submit') Search
+       
+        block content

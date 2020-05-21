@@ -1,0 +1,1 @@
+1. app.set('view', './views')  ---> app.set('views', './views')
