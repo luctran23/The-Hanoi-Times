@@ -1,4 +1,10 @@
 var express = require('express');
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('db.json');
+var db = low(adapter);
+db.defaults({news: [] })
+.write();
 
 var app = express();
 var port = 3000;
