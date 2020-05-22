@@ -1,3 +1,19 @@
 {
-  "news": []
+  "news": [
+    {
+      "id": 1,
+      "title": "COVID 19 NEWS",
+      "description": "Get new today"
+    },
+    {
+      "id": 2,
+      "title": "A man died after covid 19",
+      "description": "Get new today"
+    },
+    {
+      "id": 3,
+      "title": "A girl was overdose",
+      "description": "Get new today"
+    }
+  ]
 }
