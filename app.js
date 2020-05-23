@@ -19,7 +19,15 @@ app.get('/', function(req, res){
 });
 
 app.get('/news', function(req, res){
-    res.render('news/allNews')
+    res.render('news/allNews', {
+        news: db.get('news')
+    })
 });
 
+app.get('/news/search', function(req, res){
+    var q = req.query.q;
+    var matchesNews = db.get('news').value().filter(function(item){
+        return item.title.toLowerCase().indexOf(q) !== -1;
+    })
+});
 app.listen(port, () => console.log(`This app is listening at http://localhost:${port}`));
