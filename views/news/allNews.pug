@@ -1,8 +1,10 @@
 extends ../layouts/common.pug
 block content
+
     .container-sm
-        .card.mt-5
-            .card-body
-                h4.card-title COVID 19 NEWS
-                p.card-text Some example text. Some example text.
-                a.card-link(href='#') View more
+        each card in news
+            .card.mt-5
+                .card-body
+                    h4.card-title= card.title
+                    p.card-text= card.description
+                    a.card-link(href='#') View more

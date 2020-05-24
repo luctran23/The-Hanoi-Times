@@ -1,7 +1,9 @@
 var express = require('express');
 var low = require('lowdb');
+
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
+
 var db = low(adapter);
 db.defaults({news: [] })
 .write();
@@ -20,7 +22,7 @@ app.get('/', function(req, res){
 
 app.get('/news', function(req, res){
     res.render('news/allNews', {
-        news: db.get('news')
+        news: db.get('news').value()
     })
 });
 
