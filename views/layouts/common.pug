@@ -1,6 +1,7 @@
 html
     head
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+        script(src='../events/script.js')
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
@@ -14,8 +15,8 @@ html
                     a.nav-link(href='/news') News
                 li.nav-item.active
                     a.nav-link(href='#') Others
-            form.form-inline.my-auto(action='#')
-                input.form-control.mr-sm-2(type='text', placeholder='Search')
+            form.form-inline.my-auto(action='/news/search', method='GET')
+                input#input.form-control.mr-sm-2(type='text', placeholder='Search', name='q')
                 button.btn.btn-primary(type='submit') Search
        
         block content

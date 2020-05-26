@@ -29,7 +29,10 @@ app.get('/news', function(req, res){
 app.get('/news/search', function(req, res){
     var q = req.query.q;
     var matchesNews = db.get('news').value().filter(function(item){
-        return item.title.toLowerCase().indexOf(q) !== -1;
+        return item.title.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+    });
+    res.render('news/allNews', {
+        news: matchesNews
     })
 });
 app.listen(port, () => console.log(`This app is listening at http://localhost:${port}`));
