@@ -35,4 +35,13 @@ app.get('/news/search', function(req, res){
         news: matchesNews
     })
 });
+app.get('/news/:id', function(req, res) {
+    var id =  parseInt(req.params.id);
+    var aNews = db.get('news').find({ id: id}).value(); 
+    res.render('news/view', {
+        news: aNews
+    })
+});
+
+
 app.listen(port, () => console.log(`This app is listening at http://localhost:${port}`));
