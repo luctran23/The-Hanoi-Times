@@ -6,5 +6,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     function saveKey(){
         sessionStorage.setItem('draft', input.value);
     }
+    
+    
 })
 

@@ -1,5 +1,7 @@
 var express = require('express');
 var low = require('lowdb');
+var bodyParser = require('body-parser');
+var shortid = require('shortid');
 
 var FileSync = require('lowdb/adapters/FileSync');
 var adapter = new FileSync('db.json');
@@ -15,6 +17,8 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function(req, res){
     res.render('homePage')
@@ -35,6 +39,16 @@ app.get('/news/search', function(req, res){
         news: matchesNews
     })
 });
+app.get('/news/create', function(req, res) {
+    res.render('news/create');
+});
+
+app.post('/news/create', function(req, res) {
+    req.body.id = shortid.generate();
+    db.get('news').push(req.body).write();
+    res.redirect('/news');
+});
+
 app.get('/news/:id', function(req, res) {
     var id =  parseInt(req.params.id);
     var aNews = db.get('news').find({ id: id}).value(); 
@@ -42,6 +56,7 @@ app.get('/news/:id', function(req, res) {
         news: aNews
     })
 });
+
 
 
 app.listen(port, () => console.log(`This app is listening at http://localhost:${port}`));

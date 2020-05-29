@@ -2,6 +2,8 @@ extends ../layouts/common.pug
 block content
 
     .container-sm
+        a(href="/news/create") 
+            img(src="images/plus_icon.jpg", alt="" width="30px", height="30px")
         each card in news
             .card.mt-5
                 .card-body
