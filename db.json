@@ -1,29 +1,19 @@
 {
   "news": [
     {
-      "id": 1,
-      "title": "COVID 19 NEWS",
-      "description": "Get new today"
+      "title": "Hanoi promotes consumption of farm produce post Covid-19",
+      "description": "From May 30 – June 6, Hanoi will hold Fruits – Farm Produce Week with specialties from around 17 provinces and cites across Vietnam.",
+      "id": "tA8kxBnc7"
     },
     {
-      "id": 2,
-      "title": "A man died after covid 19",
-      "description": "Get new today"
+      "title": "Hanoi industrial production recovers in May",
+      "description": "A positive growth rate of Hanoi’s industrial production in May led to an expansion of 2.6% year-on-year in the January – May period.",
+      "id": "JQ1zO8aeI"
     },
     {
-      "id": 3,
-      "title": "A girl was overdose",
-      "description": "Get new today"
-    },
-    {
-      "title": "Protester claming",
-      "description": "girl is not available",
-      "id": "w2X60mjas"
-    },
-    {
-      "title": "Laura",
-      "description": "dying",
-      "id": "6x6vOd0Mr"
+      "title": "Hanoi delivers aid to almost all people hit by Covid-19",
+      "description": "Most of the aid beneficiaries are thankful to the timely support.  THURSDAY, 28 MAY 2020, 19:00",
+      "id": "AtzmI-PQR"
     }
   ]
 }

@@ -43,20 +43,20 @@ app.get('/news/create', function(req, res) {
     res.render('news/create');
 });
 
-app.post('/news/create', function(req, res) {
-    req.body.id = shortid.generate();
-    db.get('news').push(req.body).write();
-    res.redirect('/news');
-});
+
 
 app.get('/news/:id', function(req, res) {
-    var id =  parseInt(req.params.id);
+    var id =  req.params.id;
     var aNews = db.get('news').find({ id: id}).value(); 
     res.render('news/view', {
         news: aNews
     })
 });
 
-
+app.post('/news/create', function(req, res) {
+    req.body.id = shortid.generate();
+    db.get('news').push(req.body).write();
+    res.redirect('/news');
+});
 
 app.listen(port, () => console.log(`This app is listening at http://localhost:${port}`));

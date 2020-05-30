@@ -1,11 +1,11 @@
 extends ../layouts/common.pug
 block content
-
+    
     .container-sm
         a(href="/news/create") 
-            img(src="images/plus_icon.jpg", alt="" width="30px", height="30px")
+            img(src="images/plus_icon.jpg", alt="" width="30px", height="30px", style="margin-top: 18px; margin-bottom: -25px;")
         each card in news
-            .card.mt-5
+            .card.my-5
                 .card-body
                     h4.card-title= card.title
                     p.card-text= card.description
