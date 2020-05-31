@@ -53,6 +53,12 @@ app.get('/news/:id', function(req, res) {
     })
 });
 
+app.get('/news/:id/delete', function(req, res) {
+    var id =  req.params.id;
+    var aNews = db.get('news').find({ id: id}).value();
+    var remainNews = db.get('news').splice(db.get('news').indexOf(aNews), 1).value();
+    res.redirect('/news');
+});
 app.post('/news/create', function(req, res) {
     req.body.id = shortid.generate();
     db.get('news').push(req.body).write();
