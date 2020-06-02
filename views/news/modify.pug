@@ -1,6 +1,10 @@
+.form-modify
+    h1 Modify form
 form(action="/news/" +news.id+ "/modify", method="POST")
-    label Title
-    input(type="text", name="title")
-    label Description
-    input(type="text", name="description")
+    .title
+        label Title
+        input(type="text", name="title", style="margin-left: 55px; margin-bottom: 15px;")
+    .description
+        label Description
+        input(type="text", name="description" , style="margin-left: 10px; margin-bottom: 15px;")
     button Done
