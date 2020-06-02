@@ -60,8 +60,15 @@ app.get('/news/:id/delete', function(req, res) {
     res.redirect('/news');
 });
 app.get('/news/:id/modify', function(req, res) {
-    res.send('This is the modify page');
+    var id =  req.params.id;
+    var aNews = db.get('news').find({ id: id}).value();
+    res.render('news/modify', {
+        news: aNews
+    });
 });
+app.post('/news/:id/modify', function(req, res) {
+    res.redirect('/news');
+})
 app.post('/news/create', function(req, res) {
     req.body.id = shortid.generate();
     db.get('news').push(req.body).write();
