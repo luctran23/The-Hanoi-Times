@@ -1,7 +1,12 @@
-h1 Add a news
-form(action="/news/create",method="POST")
-    label Title of News 
-    input(type="text", name="title")
-    label Description of News 
-    input(type="text", name="description")
-    button Create
+extends ../layouts/common.pug
+block content
+    .container
+        h1 Add a news
+        form(action="/news/create",method="POST")
+            .title
+                label Title
+                input(type="text", name="title", style="margin-left: 60px; margin-bottom: 15px;")
+            .description
+                label Description 
+                input(type="text", name="description", style="margin-left: 10px; margin-bottom: 15px;")
+            button.btn.btn-primary Create

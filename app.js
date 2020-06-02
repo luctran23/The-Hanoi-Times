@@ -67,6 +67,10 @@ app.get('/news/:id/modify', function(req, res) {
     });
 });
 app.post('/news/:id/modify', function(req, res) {
+    var id =  req.params.id;
+    var aNews = db.get('news').find({ id: id}).value();
+    aNews.title = req.body.title;
+    aNews.description = req.body.description;
     res.redirect('/news');
 })
 app.post('/news/create', function(req, res) {
