@@ -1,24 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var controller = require('../controller/news.controller');
+
 var db = require('../db');
 
 var shortid = require('shortid');
 
-router.get('/', function(req, res){
-    res.render('news/allNews', {
-        news: db.get('news').value()
-    })
-});
+router.get('/', controller.app);
 
-router.get('/search', function(req, res){
-    var q = req.query.q;
-    var matchesNews = db.get('news').value().filter(function(item){
-        return item.title.toLowerCase().indexOf(q.toLowerCase()) !== -1;
-    });
-    res.render('news/allNews', {
-        news: matchesNews
-    })
-});
+router.get('/search', controller.search);
 router.get('/create', function(req, res) {
     res.render('news/create');
 });
@@ -36,7 +26,7 @@ router.get('/:id', function(req, res) {
 router.get('/:id/delete', function(req, res) {
     var id =  req.params.id;
     var aNews = db.get('news').find({ id: id}).value();
-    var remainNews = db.get('news').splice(db.get('news').indexOf(aNews), 1).value();
+    var remainNews = db.get('news').splice(db.get('news').indexOf(aNews), 1).write();
     res.redirect('/news');
 });
 router.get('/:id/modify', function(req, res) {
