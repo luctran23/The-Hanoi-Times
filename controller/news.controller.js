@@ -18,6 +18,7 @@ module.exports.search = function(req, res){
 };
 
 module.exports.create = function(req, res) {
+    console.log(req.cookies);
     res.render('news/create');
 };
 module.exports.view = function(req, res) {

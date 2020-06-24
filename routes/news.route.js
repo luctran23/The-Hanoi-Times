@@ -7,7 +7,10 @@ var db = require('../db');
 var shortid = require('shortid');
 
 router.get('/', controller.app);
-
+router.get('/cookie', function(req, res) {
+    res.cookie('title', 12345);
+    res.send('Hello world');
+})
 router.get('/search', controller.search);
 router.get('/create', controller.create);
 
